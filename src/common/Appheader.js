@@ -13,8 +13,7 @@ export default class Appheader extends Component{
 				
 				<Link to='/city' class='iconfont icon-xiabiao'>深圳</Link>				
 				<Link to='/me' class='iconfont icon-ren'></Link>		
-				</li>
-				
+				</li>				
 			</div>			
 		)		
 	}

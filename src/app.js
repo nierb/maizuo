@@ -7,7 +7,7 @@ import Me from './pages/me.js'
 import Shop from './pages/shop.js'
 import Card from './pages/card.js'
 import City from './pages/city-list.js'
-
+import Details from './common/details.js'
 import './css/style.css'
 
 import Silderbar from './common/Silderbar.js'
@@ -48,7 +48,9 @@ export default class App extends Component{
 					<Route path='/shop' component={Shop}/>
 					<Route path='/me' component={Me}/>
 					<Route path='/card' component={Card}/>					
-					<Route path='/city' component={City}/>					
+					<Route path='/city' component={City}/>		
+					<Route path='/details/:id' component={Details}/>					
+								
 				</div>	
 				
 			</BrowserRouter>

@@ -1,0 +1,141 @@
+#movies .contain{
+    box-sizing: border-box;    
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #f9f9f9;
+    width: 100%;
+    position: absolute;
+    min-height: 100%;
+}
+
+#movies .contain .movies-taps{
+     width: 100%;
+     box-sizing: border-box;
+     display: flex;
+     height: 46px;
+     border-bottom: solid #fe6e00 1px;
+}
+#movies .contain .movies-taps li{
+    flex: 1;
+    text-align: center;
+    line-height: 46px;
+    font-size: 16px;
+    color: #6a6a6a;   
+    cursor: pointer;
+}
+
+#movies .contain .movies-taps li.active{
+     border-bottom:2px  solid #fe6e00 ;
+     color: #fe6e00;
+}
+#movies .contain .nowplay{
+     width: 100%;
+    
+}
+
+ #movies .contain .playSoon{
+     width: 100%;
+ 
+ }
+#movies .contain .nowplay a{
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: dashed 1px #c9c9c9;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+}
+ #movies .contain .nowplay a img{
+     width: 60px;
+     height: 82px
+ }
+ #movies .contain .nowplay .nowplay-left{
+     flex: 1;
+     padding-left: 15px; 
+ }
+
+ #movies .contain .nowplay .nowplay-left h1{
+    font-size: 16px;
+    line-height: 32px;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 100;
+    
+ }
+
+ #movies .contain .nowplay .nowplay-left h1 span{
+    float: right;
+    font-size: 16px;
+    line-height: 32px;
+    color: #fc7103;
+    margin-right: 20px
+
+ }
+ #movies .contain .nowplay .nowplay-left h1 span i{
+     color: #ddd;
+ }
+  
+#movies .contain .nowplay .nowplay-left p{
+    height: 24px;
+    line-height: 24px;
+    color: #8e8e8e;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+  }
+
+#movies .contain .playSoon{
+    width: 100%;
+}
+#movies .contain .playSoon a{
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: dashed 1px #c9c9c9;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+}
+
+#movies .contain .playSoon a img{
+    width: 60px;
+    height: 82px
+}
+ 
+#movies .contain .playSoon a .playSoon-right{
+    flex: 1;
+    padding-left: 15px;
+    display: inline-block;
+}
+#movies .contain .playSoon a .playSoon-right h1{
+    font-size: 16px;
+    line-height: 32px;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 100;
+}
+#movies .contain .playSoon a .playSoon-right p{
+    height: 24px;
+    line-height: 24px;
+    color: #8e8e8e;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+}
+#movies .contain .playSoon a .playSoon-right h2{
+    font-weight: 100;
+    line-height: 24px;
+    color: #ffb375;
+    font-size: 12px;
+    font-weight: 100;
+    
+}

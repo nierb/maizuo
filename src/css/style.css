@@ -68,6 +68,7 @@ html,body,#app{
 	left: 0;
 	bottom: 0;
 	width: 100%;
+	overflow: auto;
 	
 }
 
@@ -108,13 +109,13 @@ html,body,#app{
 	background: lavender;
 }
 #home{
-	background: lavenderblush;
+	background: #ddd;
 }
 #me{
-	background: lightcoral
+	background: #f6f6f6;
 }
 #card{
-	background: lightskyblue
+	background: #fcfcfc ；
 }
 #cinema{
 	background: lightseagreen
@@ -123,7 +124,7 @@ html,body,#app{
 	background: lawngreen
 }
 #city{
-	background: blueviolet
+	background: #ebebeb;
 }
 
 

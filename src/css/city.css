@@ -1,0 +1,63 @@
+
+
+#city .city-gprs .city-index-title{
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #ebebeb;
+    margin-top: -1px;
+}
+#city .city-gprs .city-index-detail{
+    background: #fff;
+}
+
+#city .city-gprs .city-index-detail ul{
+    min-width: 320px;
+}
+#city .city-gprs .city-index-detail ul li{
+    width: 25%;
+    font-size: 16px;
+    line-height: 46px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #838383;
+    border-bottom: #ebebeb 1px solid;
+    color: #e2941a;
+}
+
+#city .hot-city .city-index-title {
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #ebebeb;
+    margin-top: -1px;
+}
+#city .hot-city  .city-index-detail{
+    background: #ffffff;
+}
+
+#city .hot-city .city-index-detail ul {
+    min-width: 320px;
+}
+#city .hot-city .city-index-detail ul li{
+    width: 25%;
+    font-size: 16px;
+    line-height: 46px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #838383;
+    border-bottom: #ebebeb 1px solid;
+    color: #838383;
+}
+
+#city .sort-data .city-index-title{
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #ebebeb;
+    margin-top: -1px;
+}
+
+
