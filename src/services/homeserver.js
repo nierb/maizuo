@@ -116,6 +116,11 @@ function cityData(){
          })
      })
  }
+
+ //商城数据
+  function shopData(){
+      
+  }
 export default{
     getHomeBanner,
     getNowPlayingData,
