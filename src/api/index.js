@@ -10,11 +10,17 @@ const detailsData='/v4/api/film/'
 const cityData='/v4/api/city'
 //影院数据 ?__t=1503374300165
 const cinemaData='/v4/api/cinema'
+//商城数据http://aura.maizuo.com/api/ad/list
+const shopDara='/api/ad/list'
+//商城数据下
+const homeData='/api/recommend/home?page=1&num=20'
 export default{
 homeServerBanner,
 nowPalying,
 comingSoon,
 detailsData,
 cityData,
-cinemaData
+cinemaData,
+shopDara,
+homeData
 }

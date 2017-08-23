@@ -60,4 +60,44 @@
     margin-top: -1px;
 }
 
+#city .sort-data .city-index-detail  {
+    width: 100%;
+    box-sizing: border-box; 
+    background: #fff; 
+}
 
+#city .sort-data .city-index-detail  li{
+    display: inline-block;
+    flex: 1;
+    width: 25%;
+    font-size: 16px;
+    line-height: 46px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #838383;
+    border-bottom: #ebebeb 1px solid;
+    
+}
+#city .city-list-view .letterWords{
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #ebebeb;
+    margin-top: -1px;
+}
+#city .city-list-view ul {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+}
+#city .city-list-view ul li{
+    width: 25%;
+    font-size: 16px;
+    line-height: 46px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #838383;
+    border-bottom: #ebebeb 1px solid;
+}

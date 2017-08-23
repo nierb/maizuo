@@ -69,22 +69,8 @@ function cityData(){
     return new Promise((resolve,reject)=>{
         axios.get(`${API.cityData}?__t=${new Date().getTime()}`)
         .then((response)=>{
-            console.log(response)
-            var arr=response.data.data.cities.map((item,index)=>{
-                   var obj={};                  
-                   if(item.pinyin.startsWith('A')==true){
-                     obj.a=item                                  
-                    console.log(obj)
-                    }
-                    else if(item.pinyin.startsWith('B')==true){
-                     obj.b=item
-                    }
-
-                 return obj
-                  
-               })
-                console.log(arr)
-                resolve(arr)
+        //    console.log(response.data.data.cities)  
+            resolve(response.data.data.cities)
         })
         .catch((error)=>{
             console.log(error)
@@ -99,18 +85,25 @@ function cityData(){
          axios.get(`${API.cinemaData}?__t=${new Date().getTime()}`)
          .then((response)=>{
             var arr=response.data.data.cinemas;
-                var obj={};
-            arr.map((item,index)=>{
-                 var name=item.district.name;
-                 obj[name]=[]; 
-               
-                return arr
-                
+            var arr1=[];
+            var obj={}; 
+            var arr2=[];
+            arr.map((item,index)=>{               
+                 var name=item.district.name; 
+                if(arr1.indexOf(item.district.name)==-1){
+                     arr1.push(item.district.name)
+                      
+                }                             
+                  
             })
-            console.log(arr)
+                arr2.push(arr1,arr)
+                 console.log(arr2)
             
-          //  resolve(arr) 
+            
+            resolve(arr) 
          })
+
+
          .catch((error)=>{
              console.log(error)
          })
@@ -119,7 +112,29 @@ function cityData(){
 
  //商城数据
   function shopData(){
-      
+      return new Promise((resolve,reject)=>{
+          axios.get(`${API.shopDara}`)
+          .then((respose)=>{
+            resolve(respose.data.data)
+           
+          })
+          .catch((error)=>{
+              console.log(error)
+          })
+      })
+  }
+
+  function homeData(){
+      return new Promise((resolve,reject)=>{
+          axios.get(`${API.homeData}`)
+          .then((response)=>{
+              
+            resolve(response.data.data.list)
+          })
+          .catch((error)=>{
+              console.log(error)
+          })
+      })
   }
 export default{
     getHomeBanner,
@@ -127,5 +142,7 @@ export default{
     comingSoon,
     detailsData,
     cityData,
-    cinemaData
+    cinemaData,
+    shopData,
+    homeData
 }    

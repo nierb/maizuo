@@ -6,6 +6,9 @@ import homeBanner from '../services/homeserver.js'
 export default class Cinema extends Component{
 	constructor(){
 		super();
+		this.state={
+			cinemaData:[]
+		}
 		
 	}
 	render(){
@@ -23,6 +26,7 @@ export default class Cinema extends Component{
 	componentWillMount(){
 		homeBanner.cinemaData()
 		.then((data)=>{
+			this.setState({cinemaData:data})
 			//console.log(data)
 		})
 	}
