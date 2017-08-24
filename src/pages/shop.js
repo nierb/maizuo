@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import homeBanner from '../services/homeserver.js'
 import '../css/shop.css'
+import {Link} from 'react-router-dom'
+
 var mySwiper =null;
 export default class Shop extends Component{
 	constructor(){
@@ -59,7 +61,7 @@ export default class Shop extends Component{
 										<div class='pic-list'>
 										{item.products.map((i,index)=>{
 											return (																							
-												<div key={index} class='list'>
+												<div key={index} class='list' onClick={this.shopDetail.bind(this,index)}>
 													<img src={i.image}/>
 													<h1>{i.name}</h1>	
 													<p>{parseInt(i.price)/100}.00</p>													
@@ -100,7 +102,8 @@ export default class Shop extends Component{
 				</div>
 			</div>			
 		)		
-	}	
+	}
+
 
 	componentWillMount(){
 		homeBanner.shopData()

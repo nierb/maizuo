@@ -1,0 +1,82 @@
+#cinema .list-cinema {
+    width: 100%;
+}
+#cinema .list-cinema .area{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 16px;
+    background: #e1e1e1;
+    color: #636363;
+    cursor: pointer;
+}
+ #cinema .list-cinema .cinemaName {
+    padding: 10px 0 12px 16px;
+    cursor: pointer;
+    background: #fff;
+    margin: 1px 1px;
+ } 
+#cinema .list-cinema .cinemaName .width{
+    width: 75%;
+    min-width: 230px;
+    cursor: pointer;
+    overflow: hidden;
+    
+}
+.isshow{
+    display: block;
+}
+#cinema .list-cinema .cinemaName .width .eat-active i{
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0 5px;
+    margin: 0 5px;
+    font-style: normal;
+    color: #fff;
+    height: 15px;
+    line-height: 15px;
+    background-color: #51add0;
+    font-style: normal;
+    font-size: 8px;
+}
+ #cinema .list-cinema .cinemaName em{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: text-top;
+    max-width: 80%;
+    font-style: normal;
+ }
+#cinema .list-cinema .cinemaName .width .name span{
+    text-align: center;
+    line-height: 8px;
+    margin-left: 8px;
+    font-size: 8px;
+    display: inline-block;
+    border: 1px solid #fc8558;
+    border-radius: 50%;
+    color: #fc8558;
+    padding: 2px;
+}
+#cinema .list-cinema .cinemaName .width .name span:nth-child(2){
+    color: #88aec8;
+    border: 1px solid #88aec8;
+}    
+ #cinema .list-cinema .cinemaName .width .eat-active .hide{
+     display: none;
+ }
+#cinema .list-cinema .cinemaName .width .eat-active .SUNDRY{
+    background-color: #51add0;
+}
+#cinema .list-cinema .cinemaName .width .eat-active .DISCOUNT{
+    background-color: #ff9658;
+}
+ #cinema .list-cinema .cinemaName .width p{
+    display: inline-block;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    color: #ccc;
+ }

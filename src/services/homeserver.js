@@ -84,23 +84,32 @@ function cityData(){
      return new Promise((resolve,reject)=>{
          axios.get(`${API.cinemaData}?__t=${new Date().getTime()}`)
          .then((response)=>{
-            var arr=response.data.data.cinemas;
-            var arr1=[];
-            var obj={}; 
-            var arr2=[];
-            arr.map((item,index)=>{               
-                 var name=item.district.name; 
-                if(arr1.indexOf(item.district.name)==-1){
-                     arr1.push(item.district.name)
-                      
-                }                             
-                  
-            })
-                arr2.push(arr1,arr)
-                 console.log(arr2)
-            
-            
-            resolve(arr) 
+        //  var arr=response.data.data.cinemas;
+        //  var arr1=[];
+        //  arr.map((item,index)=>{
+        //      if(arr1.indexOf(item.district.name)==-1){
+        //          arr1.push(item.district.name)
+        //      }
+        //  })   
+        //  var arr2=arr1.map((item,index)=>{
+        //      var obj={};
+        //      obj.name=arr1[index];
+        //      obj.list=[];
+        //      return obj
+        //  })
+        //  arr2.map((item,index)=>{
+             
+        //     for(var i=0;i<arr.length;i++){
+        //         if(item.name==arr[i].district.name){
+        //             item.list.push(arr[i])
+        //         }
+        //     }
+        //  })
+         
+                
+           
+          
+            resolve(response.data.data.cinemas) 
          })
 
 
