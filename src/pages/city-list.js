@@ -12,7 +12,8 @@ export default class City extends Component{
             className:'',
             citydata:[],
             letterWords:['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
-            city:[]
+            city:[],
+            text:'深圳'
         }
     }
 	render(){
@@ -31,7 +32,7 @@ export default class City extends Component{
                              <div class='city-index-title'>GPS定位你所在城市</div>
                              <div class='city-index-detail'>
                                 <ul>
-                                    <li>深圳</li>
+                                    <li>{this.state.text}</li>
                                 </ul>
                             </div>   
                         </div>
@@ -89,7 +90,8 @@ export default class City extends Component{
         console.log(cityname)
         this.setState({className:'leave'})
         setTimeout(()=> {
-        this.state.history.go(-1)            
+        this.state.history.go(-1)
+        this.setState({text:cityname})          
         }, 400);
     }
     jumpto(index){
