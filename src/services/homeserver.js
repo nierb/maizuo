@@ -25,6 +25,24 @@ function getNowPlayingData(){
         })
     })
 }
+
+function getNowPlayingData1(n){
+    return new Promise((resolve,reject)=>{
+        axios.get(`${API.nowPalying}?__t=${new Date().getTime()}&page=${n}&count=7`)
+        .then((response)=>{
+            resolve(response.data.data.films)
+           
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    })
+}
+
+
+
+
+
 //即将上映
 function comingSoon(){
     return new Promise((resolve,reject)=>{
@@ -38,6 +56,19 @@ function comingSoon(){
         })
     })
 }
+function comingSoon1(n){
+    return new Promise((resolve,reject)=>{
+        axios.get(`${API.comingSoon}?__t=${new Date().getTime()}&page=${n}&count=7`)
+        .then((response)=>{
+            resolve(response.data.data.films)
+            
+        })
+        .catch((errpr)=>{
+            console.log(error)
+        })
+    })
+}
+
 //详情
 function detailsData(id){
     return new Promise((resolve,reject)=>{
@@ -148,7 +179,9 @@ function cityData(){
 export default{
     getHomeBanner,
     getNowPlayingData,
+    getNowPlayingData1,
     comingSoon,
+    comingSoon1,
     detailsData,
     cityData,
     cinemaData,

@@ -110,16 +110,16 @@ export default class City extends Component{
         .then((data)=>{
             console.log(data) 
             this.setState({citydata:data})
-            
+            myScroll.refresh()
         })
-
+        
     }
 
     componentDidMount(){
-        myScroll = new IScroll('#city',{
+        myScroll =new IScroll('#city',{
              scrollbars: true,
              mouseWheel: true
-             
+                         
         });
         myScroll.refresh()
     }
