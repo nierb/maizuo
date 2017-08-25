@@ -85,14 +85,18 @@ export default class Movies extends Component {
 		)
 	}
 	nowSplay() {
-		this.setState({ ishow: false })
+		this.setState({ ishow: false } ,function(){
+			myScroll.refresh()
+		})
 		this.setState({ ishide: true })
 		this.setState({ classname: 'active' })
 		this.setState({ classname1: '' })
 
 	}
 	playSoon() {
-		this.setState({ ishide: false })
+		this.setState({ ishide: false } ,function(){
+			myScroll.refresh()
+		})
 		this.setState({ ishow: true })
 		this.setState({ classname: '' })
 		this.setState({ classname1: 'active' })
@@ -101,14 +105,14 @@ export default class Movies extends Component {
 
 
 	componentWillMount() {
-		homeBanner.getNowPlayingData1(n)
+		homeBanner.getNowPlayingData1(1)
 			.then((data) => {
 			
 			this.setState({ playdata: data })
 			myScroll.refresh()	
 			})
 
-		homeBanner.comingSoon1(m)
+		homeBanner.comingSoon1(1)
 		.then((data)=>{
 			this.setState({comingdata:data})
 			myScroll.refresh()
@@ -122,45 +126,34 @@ export default class Movies extends Component {
 		//	bounce: true,			
 			 probeType: 3, 
 			 scrollbars: true,
-         	 mouseWheel: true
-         	
+         	 mouseWheel: true        	
 		})
-	
-			
-		
-		myScroll.on('scroll',()=>{
+			//监听滚动停止
+		myScroll.on('scrollEnd',()=>{
 			console.log(myScroll)
+			
 				myScroll.refresh()
-								
-			if(myScroll.y==myScroll.maxScrollY ){
-				n++;
-				homeBanner.getNowPlayingData1(n)
-				.then((data) => {					
-					this.setState({ playdata: this.state.playdata.concat(data)})	
-										
-				})
+			
+			if(!this.state.ishow){
+				if(myScroll.y<=myScroll.maxScrollY && n<=8){
+					n++;
+					homeBanner.getNowPlayingData1(n)
+					.then((data) => {					
+						this.setState({ playdata: this.state.playdata.concat(data)})	
+						myScroll.refresh()	
+						})
+					}				
 			}
-			else if(n>8){
-				console.log('没数据了')
+			if(!this.state.ishide){
+				if(myScroll.y<=myScroll.maxScrollY && m<=15 ){
+					m++;
+					homeBanner.comingSoon1(m)				
+					.then((data)=>{				
+						this.setState({comingdata:this.state.comingdata.concat(data)})
+						myScroll.refresh()					
+					})
+				}
 			}
-
-			if(myScroll.y==myScroll.maxScrollY && m<=15){
-				m++;
-				homeBanner.comingSoon1(m)				
-				.then((data)=>{				
-					this.setState({comingdata:this.state.comingdata.concat(data)})
-					
-				})
-			}
-		
 		})
-
-		
-
-
-	
-
-	}
-
-	
+	}	
 }

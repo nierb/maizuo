@@ -1,4 +1,6 @@
-
+#home{
+    overflow: auto;
+}
 #home .swiper-wrapper img{
     width: 100%;
    
