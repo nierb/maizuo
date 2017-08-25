@@ -90,7 +90,8 @@ export default class City extends Component{
         console.log(cityname)
         this.setState({className:'leave'})
         setTimeout(()=> {
-        this.state.history.go(-1)
+        this.state.history.push('/')
+        console.log(this.state.history)
         this.setState({text:cityname})          
         }, 400);
     }

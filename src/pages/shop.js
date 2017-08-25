@@ -108,6 +108,7 @@ export default class Shop extends Component{
 	componentWillMount(){
 		homeBanner.shopData()
 		.then((data)=>{
+			console.log(data)
 			//轮播数据
 			this.setState({data1:data.slice(8,10)})	
 			this.state.data1.unshift(this.state.data1[1])

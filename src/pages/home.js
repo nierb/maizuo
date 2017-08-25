@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import homeBanner from '../services/homeserver.js'
 import '../css/home.css'
+import {Link} from 'react-router-dom'
 let bannerSweiper = null;
 export default class Home extends Component {
 	constructor({ history }) {
@@ -30,7 +31,12 @@ export default class Home extends Component {
 						<ul>
 							{this.state.nowPlaydata.map((item, index) => {
 								return (
-									<li key={index}>
+									<Link to={{
+										pathname:'/details/'+item.id,	
+										state:{
+											id:item.id
+										}
+									}} key={index}>
 										<img src={item.cover.origin} />
 										<div class='main-c'>
 											<div class='main-c-left'>
@@ -41,7 +47,7 @@ export default class Home extends Component {
 												{item.grade}
 											</div>
 										</div>
-									</li>
+									</Link>
 								)
 							})}
 							<div class='movefile' onClick={this.btnToNowPlay.bind(this)}>更多热映电影</div>
@@ -56,7 +62,12 @@ export default class Home extends Component {
 								<ul>
 									{this.state.comingSoonData.map((item, index) => {
 										return (
-											<li key={index}>
+											<Link  to={{
+													pathname:'/details/'+item.id,	
+													state:{
+													id:item.id
+												}
+											}} key={index}>
 												<img src={item.cover.origin} />
 												<div class='main-c'>
 													<div class='main-c-left'>
@@ -67,7 +78,7 @@ export default class Home extends Component {
 													</div>
 												</div>
 
-											</li>
+											</Link>
 										)
 
 									})}

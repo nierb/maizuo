@@ -25,7 +25,7 @@ export default class Cinema extends Component{
 							 return (
 							<div class='list-cinema' key={index}>
 								<div class='area' key={index} onClick={this.tapbtn.bind(this,index)} ref={index+'2'}>{item.district.name}</div> 
-								<div ref={index+'3'} class={this.state.isshow ? 'isshow':null}>
+								<div ref={index+'3'} >
 								{this.state.cinemaData.map((i,index1)=>{
 									if(item.district.name==i.district.name){
 										return (
@@ -60,7 +60,14 @@ export default class Cinema extends Component{
 	// console.log(this.refs[index+'2'])
 	// console.log(this.refs[index+'3'])	
 		// this.setState({isshow:!this.state.isshow})
-		//  this.refs[index+'3']
+		
+		
+
+		this.refs[index+'3'].style.display='none'
+		
+
+			
+	
 		// this.setState({isshow:!this.state.isshow})
 	}
 	

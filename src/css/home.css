@@ -13,15 +13,16 @@
 }
 .main-container ul {
     padding-top:18px; 
-}
-.main-container ul li{
+}   
+.main-container ul a{
     width: 90%;
     margin:0 17px 17px 17px;
     box-shadow: 0.5px 0.5px 1px #a8a8a8;
    background: white;
+   display: block;
    
 }
-.main-container ul li img{  
+.main-container ul a img{  
     width: 100%;
 }
 .main-container .main-c{

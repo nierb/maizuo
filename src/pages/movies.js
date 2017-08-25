@@ -66,7 +66,7 @@ export default class Movies extends Component {
 									}} key={index} >
 										<img src={item.poster.origin}alt=""/>
 										<div class='playSoon-right'>
-										  <h1>{item.name}|</h1>
+										  <h1>{item.name}</h1>
 										  <p>{item.intro}</p>
 										  <h2>8月25日上映  星期五</h2>
 										</div>
