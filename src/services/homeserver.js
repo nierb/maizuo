@@ -5,7 +5,10 @@ function getHomeBanner(){
     return new Promise((resolve,reject)=>{
         axios.get(`${API.homeServerBanner}?__t=${new Date().getTime()}`)
         .then((response)=>{
-            resolve(response.data.data.billboards)          
+            resolve(response.data.data.billboards)  
+            console.log(response)
+            
+            
         })
         .catch((error)=>{
             console.log(error)

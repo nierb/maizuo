@@ -1,28 +1,23 @@
 #home{
-    overflow: auto;
+    overflow: auto;  
 }
 
-.claaa{
-   
-}
-
-
-.pox{
-   
+.pox{  
     width: 50px;
     height: 50px;
     position: fixed;
     bottom:-50px;
-    right: 40px;
-    background: red;
+    right: 12px;  
     z-index: 555;
-    transition: 0.5s;
-    
-    
+    transition: 0.5s;   
 }
+.pox i{
+    font-size: 40px;
+    opacity: 0.8;
+}
+
 #home .swiper-wrapper img{
-    width: 100%;
-   
+    width: 100%;   
 }
 
 .swiper-container {

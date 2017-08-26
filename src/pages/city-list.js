@@ -2,7 +2,8 @@ import React,{Component} from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import '../css/city.css'
 import homeBanner from '../services/homeserver.js'
-
+import store from '../store'
+ var unsubscribe;
  var myScroll=null;
 export default class City extends Component{
 	constructor({history}){
@@ -13,7 +14,7 @@ export default class City extends Component{
             citydata:[],
             letterWords:['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
             city:[],
-            text:'深圳'
+            text:store.getState().username
         }
     }
 	render(){
@@ -64,7 +65,7 @@ export default class City extends Component{
                         <div class='city-list-view'>
                                     {this.state.letterWords.map((item,index0)=>{
                                       return (
-                                        <div> 
+                                        <div key={index0}> 
                                           <div ref={index0+'words'} class='letterWords' key={index0}>{item}</div>
                                          <ul>
                                             {this.state.citydata.map((i,index1)=>{
@@ -87,32 +88,41 @@ export default class City extends Component{
 		)		
     }
     back(cityname){
-        console.log(cityname)
+    //    console.log(cityname)
         this.setState({className:'leave'})
         setTimeout(()=> {
         this.state.history.push('/')
-        console.log(this.state.history)
-        this.setState({text:cityname})          
+        this.setState({text:cityname})         
         }, 400);
+    //修改全局变量 
+     store.dispatch({
+         type:'changename',
+         val:cityname
+     })   
+
+
     }
+    //点击字母跳转
     jumpto(index){
-        console.log(index)
+   //     console.log(index)
         var words=this.refs[index+'words'];
         var scrollTop=words.offsetTop;
-        console.log(scrollTop)
-        console.log(words)
          myScroll.scrollTo(0,-scrollTop,500)
          myScroll.refresh()
     }
 
     componentWillMount() {
+        //请求城市数据
         homeBanner.cityData()
         .then((data)=>{
-            console.log(data) 
             this.setState({citydata:data})
             myScroll.refresh()
         })
         
+         unsubscribe = store.subscribe(()=>{
+	//		console.log('one 触发了1');
+			this.setState({text: store.getState().username});
+		});
     }
 
     componentDidMount(){
@@ -122,7 +132,16 @@ export default class City extends Component{
                          
         });
         myScroll.refresh()
+
+       
+        
     }
 
- 	
+    componentWillUnmount(){
+		//在组件将要销毁时，将监听移除。
+	//	console.log('one componentWillUnmount');
+		unsubscribe();
+	}
+
+    
 }

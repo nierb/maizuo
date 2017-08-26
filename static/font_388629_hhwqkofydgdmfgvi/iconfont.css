@@ -2,8 +2,9 @@
 @font-face {font-family: "iconfont";
   src: url('iconfont.eot?t=1503729984649'); /* IE9*/
   src: url('iconfont.eot?t=1503729984649#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.ttf?t=1503729984649') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
- 
+  url('iconfont.woff?t=1503729984649') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1503729984649') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1503729984649#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -20,7 +21,7 @@
 
 .icon-ren:before { content: "\e60b"; }
 
-.icon-xiabiao::after { content: "\e631"; }
+.icon-xiabiao:before { content: "\e631"; }
 
-.icon-youbiao::after { content: "\e633"; }
+.icon-youbiao:before { content: "\e633"; }
 

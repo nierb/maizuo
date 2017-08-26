@@ -136,7 +136,7 @@ export default class Movies extends Component {
 		})
 			//监听滚动停止
 		myScroll.on('scrollEnd',()=>{
-			console.log(myScroll)
+		//	console.log(myScroll)
 			
 				myScroll.refresh()
 				

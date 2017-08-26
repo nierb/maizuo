@@ -61,7 +61,7 @@ export default class Shop extends Component{
 										<div class='pic-list'>
 										{item.products.map((i,index)=>{
 											return (																							
-												<div key={index} class='list' onClick={this.shopDetail.bind(this,index)}>
+												<div key={index} class='list'>
 													<img src={i.image}/>
 													<h1>{i.name}</h1>	
 													<p>{parseInt(i.price)/100}.00</p>													
@@ -108,7 +108,7 @@ export default class Shop extends Component{
 	componentWillMount(){
 		homeBanner.shopData()
 		.then((data)=>{
-			console.log(data)
+		//	console.log(data)
 			//轮播数据
 			this.setState({data1:data.slice(8,10)})	
 			this.state.data1.unshift(this.state.data1[1])
@@ -118,7 +118,7 @@ export default class Shop extends Component{
 			//两张卡
 			this.setState({data2:data.slice(10,12)})
 			//小商品
-			this.setState({data3:data.slice(12,data.length)})		
+			this.setState({data3:data.slice(15,data.length)})		
 			mySwiper.update();
 			mySwiper.slideTo(1)
 		})

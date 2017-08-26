@@ -75,7 +75,7 @@ export default class Cinema extends Component{
 		homeBanner.cinemaData()
 		.then((data)=>{
 			this.setState({cinemaData:data})
-			console.log(data)
+		//	console.log(data)
 		})
 	}
 

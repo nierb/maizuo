@@ -21,12 +21,13 @@ export default class Home extends Component {
 	}
 	render() {
 			let style={
-				transform:this.state.show ?  'translateY(-200%)':"none"
+				transform:this.state.show ?  'translateY(-200%)':"none",
+			
 			}
 
 		return (
 			<div>
-				<div class='pox ' ref='pox' style={style} onClick={this.backtop.bind(this)}>box</div>
+				<div class='pox ' ref='pox' style={style} onClick={this.backtop.bind(this)}><i class=' iconfont icon-paixujiantoushang' ></i></div>
 				<div class='page' id='home' ref="box"  onWheel={this.scrolltop.bind(this)}>
 					<div class="wrap">
 						<div class="swiper-container">
@@ -107,14 +108,17 @@ export default class Home extends Component {
 
 	}
 	backtop(){
+	
 		this.refs.box.scrollTop=0;
-		this.refs.box.style.transform='translateY(-200%)'
+		this.refs.pox.style.transform='translateY(-200%)'
+		
 	}
 	scrolltop(){
-
+		
 		//console.log(this.refs.box.scrollTop)
 		if(this.refs.box.scrollTop>200){
 			this.setState({show:true})
+			
 			
 		}else{
 			this.setState({show:false})
@@ -159,9 +163,12 @@ export default class Home extends Component {
 		bannerSweiper = new Swiper('.swiper-container', {
 			loop: true
 		});
-
-		 window.addEventListener('scrollEnd', '#home');
-		 
+		//  myScroll =new IScroll('#city',{
+        //      scrollbars: true,
+        //      mouseWheel: true
+                         
+        // });
+        // myScroll.refresh()
   }
 	
 
