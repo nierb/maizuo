@@ -14,14 +14,20 @@ export default class Home extends Component {
 			bannerData: [],
 			nowPlaydata: [],
 			comingSoonData: [],
-			history
+			history,
+			show:false
 
 		}
 	}
 	render() {
+			let style={
+				transform:this.state.show ?  'translateY(-200%)':"none"
+			}
+
 		return (
 			<div>
-				<div class='page' id='home' ref="box">
+				<div class='pox ' ref='pox' style={style} onClick={this.backtop.bind(this)}>box</div>
+				<div class='page' id='home' ref="box"  onWheel={this.scrolltop.bind(this)}>
 					<div class="wrap">
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
@@ -97,6 +103,22 @@ export default class Home extends Component {
 				</div>
 			</div>
 		)
+		
+
+	}
+	backtop(){
+		this.refs.box.scrollTop=0;
+		this.refs.box.style.transform='translateY(-200%)'
+	}
+	scrolltop(){
+
+		//console.log(this.refs.box.scrollTop)
+		if(this.refs.box.scrollTop>200){
+			this.setState({show:true})
+			
+		}else{
+			this.setState({show:false})
+		}
 	}
 	btnToNowPlay() {
 
@@ -138,10 +160,9 @@ export default class Home extends Component {
 			loop: true
 		});
 
-		 myScroll = new IScroll(this.refs.box,{
-             scrollbars: true
-        });
-		 myScroll.refresh()
-	}
+		 window.addEventListener('scrollEnd', '#home');
+		 
+  }
+	
 
 }

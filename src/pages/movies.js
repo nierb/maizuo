@@ -84,32 +84,38 @@ export default class Movies extends Component {
 			</div>
 		)
 	}
+	//点击现在热映显示
 	nowSplay() {
 		this.setState({ ishow: false } ,function(){
 			myScroll.refresh()
+			
 		})
 		this.setState({ ishide: true })
 		this.setState({ classname: 'active' })
-		this.setState({ classname1: '' })
-
+		this.setState({ classname1: '' })	
 	}
+	//点击即将上映显示
 	playSoon() {
 		this.setState({ ishide: false } ,function(){
 			myScroll.refresh()
+			
 		})
 		this.setState({ ishow: true })
 		this.setState({ classname: '' })
-		this.setState({ classname1: 'active' })
-
+		this.setState({ classname1: 'active' })		
 	}
 
 
 	componentWillMount() {
+		
+		n=1;
+		m=1;
 		homeBanner.getNowPlayingData1(1)
 			.then((data) => {
 			
 			this.setState({ playdata: data })
 			myScroll.refresh()	
+			
 			})
 
 		homeBanner.comingSoon1(1)
@@ -133,8 +139,9 @@ export default class Movies extends Component {
 			console.log(myScroll)
 			
 				myScroll.refresh()
-			
+				
 			if(!this.state.ishow){
+			
 				if(myScroll.y<=myScroll.maxScrollY && n<=8){
 					n++;
 					homeBanner.getNowPlayingData1(n)
@@ -155,5 +162,7 @@ export default class Movies extends Component {
 				}
 			}
 		})
-	}	
+	}
+	
+	
 }
